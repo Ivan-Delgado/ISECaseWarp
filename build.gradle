@@ -29,10 +29,15 @@ subprojects() {
         }
     }
     
-    repositories() {
-         mavenCentral()
-    }
+    repositories {
+  	  mavenLocal()
+   	  maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+	}
 
+	dependencies {
+    	compile group: 'edu.cmu.sphinx', name: 'sphinx4-core', version:'5prealpha-SNAPSHOT'
+    	compile group: 'edu.cmu.sphinx', name: 'sphinx4-data', version:'5prealpha-SNAPSHOT'
+	}
     compileJava.options.encoding = 'UTF-8'
     javadoc.options.encoding = 'UTF-8'
     sourceCompatibility = 1.7
